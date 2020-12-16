@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2020 at 08:08 AM
+-- Generation Time: Dec 16, 2020 at 08:02 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -33,8 +33,9 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL COMMENT 'name of the product',
   `price` double NOT NULL COMMENT 'price of the product',
   `type` varchar(255) NOT NULL COMMENT 'type of the product',
-  `type_value` varchar(255) NOT NULL COMMENT 'value of type'
+  `typevalue` text DEFAULT NULL COMMENT 'Type Value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Indexes for dumped tables
@@ -55,7 +56,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id';
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=125;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
