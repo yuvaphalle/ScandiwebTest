@@ -149,30 +149,30 @@
 
    
   
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-  
-        //if type is size
-        $("#size").on("keyup", function(){
-            $("#typev").val($("#size").val() + " MB");    
-        });
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	
+			//if type is size
+			$("#size").on("keyup", function(){
+				$("#typev").val($("#size").val() + " MB");    
+			});
 
-        //if type is dimentions
-        $("#height, #width , #length").on("keyup", function(){
-            $("#typev").val($("#height").val() + "x" + $("#width").val()+ "x" + $("#length").val()+ $("#size").val()+ $("#width").val());
-        });
+			//if type is dimentions
+			$("#height, #width , #length").on("keyup", function(){
+				$("#typev").val($("#height").val() + "x" + $("#width").val()+ "x" + $("#length").val()+ $("#size").val()+ $("#width").val());
+			});
 
-        //if type is weight
-        $("#typev").on("keyup", function(){
-            $("#typev").val($("#weight").val() + "KG" );
-        });
+			//if type is weight
+			$("#weight").on("keyup", function(){
+				$("#typev").val($("#weight").val() + "KG" );
+			});
 
-</script>
+	</script>
 
 
     <input type="text" class="form-control mb-4 " id="typev"   hidden name="typev"  >
 
-</div>  
+	</div>  
     </form>
     </div>
 
