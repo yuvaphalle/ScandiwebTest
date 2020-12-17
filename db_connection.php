@@ -6,8 +6,8 @@ $password = "";
 
 // Create connection
 
-$conn = mysqli_connect($servername, $username, $password, $database);
-
+ $GLOBALS['conn'] = mysqli_connect($servername, $username, $password, $database);
+global $conn;
 // Check connection
 
 if ($conn->connect_error) {
