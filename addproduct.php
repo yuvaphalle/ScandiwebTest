@@ -20,7 +20,6 @@
             <p class="h2 my-0 me-md-auto fw-normal"><b>Product Add</b></p>
             <?php
                 require_once('db_connection.php');
-                global $conn;
                 $query="SELECT * from products";
                 $result = mysqli_query($conn, $query);
                 $rowcount=mysqli_num_rows($result); 
@@ -41,9 +40,9 @@
                         <!-- Button Validation to avoid entries more than!-->
                         <button class="btn btn-outline-success " type="submit" 
                         <?php  
-                            require_once('db_connection.php');
-                            $query="SELECT * from products";
-                            $result = mysqli_query($conn, $query);
+                            $db = mysqli_connect("localhost","root","", "scandiweb") or die("Unable to connect");
+                            $limit="SELECT * from products";
+                            $result = mysqli_query($db, $limit);
                             $rowcount=mysqli_num_rows($result); 
                             if ($rowcount >= 12) { ?> disabled <?php   }  ?> 
                             form="addproduct" ><b>Save</b></button> &nbsp;&nbsp;

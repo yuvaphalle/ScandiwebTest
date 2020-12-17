@@ -2,9 +2,8 @@
     
 function getproduct(){
 
-    include('db_connection.php');
+    require_once('db_connection.php');
     $query = "SELECT   *  from products";
-    global $conn;
     $result = mysqli_query($conn, $query);
  
     if ($result->num_rows > 0) {
@@ -17,7 +16,7 @@ function getproduct(){
         <div class="card mb-4 shadow-sm">
         <div class="card-header">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input " id="checkItem" name="check[]" value="'.$row['id'].'">
+                <input type="checkbox" class="form-check-input " id="mark">    
             </div>
         </div>
         <div class="card-body">
@@ -35,7 +34,6 @@ function getproduct(){
 
         }
     }
-  
     } else {
         echo "<centre> 0 Products </centre>";
     }   

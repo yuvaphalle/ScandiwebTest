@@ -16,7 +16,7 @@
             </style>
     </head>
     <body >
-    <form name="index" method="post" action="">
+        
 <!-- nav bar-->        
         <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom shadow-sm fixed-top">
             <p class="h2 my-0 me-md-auto fw-normal"><b>Product List</b></p>
@@ -28,42 +28,26 @@
                     
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <br>
-                        <a href="addproduct.php"><button class="btn btn-outline-success " type="button" ><b>ADD</b></button> </a> &nbsp;&nbsp;
-                        <button class="btn btn-outline-danger " type="delete" name="save"><b>MASS DELETE</b></button>&nbsp;&nbsp;
+                        <button class="btn btn-outline-success " type="submit"  onclick="window.location.href='addproduct.php'"><b>ADD</b></button> &nbsp;&nbsp;
+                        <button class="btn btn-outline-danger " type="submit"><b>MASS DELETE</b></button>&nbsp;&nbsp;
                     </div>
-                   
             </div>
             </nav>
         </header>
  <!-- nav bar ends here-->       
-    <br><br><br><br>  
+    <br><br><br><br><br><br>      
     <main class="container " >
 <!-- main body cards-->
     <div class="row row-cols-1 row-cols-md-4 mb-3 text-center ">
         
         <?php 
-            
             require_once("getproduct.php");
             getproduct();
-
-            if(isset($_POST['save'])){
-                global $conn;
-                require_once('db_connection.php');
-                $checkbox = $_POST['check'];
-                for($i=0;$i<count($checkbox);$i++){
-                $del_id = $checkbox[$i]; 
-                $qyery = "DELETE FROM products  WHERE id='".$del_id."'";
-                mysqli_query($conn,$qyery);
-                $message = "Data deleted successfully !";
-                echo "<script> location.href = 'index.php';</script>";
-            }
-            }
-         ?>   
+        ?>
         
         
        
     </div>
-    </form>
 <!-- main bidy cards end here-->    
             <br>
             <footer class="pt-4 my-md-5 pt-md-4 border-top fixed-bottom " >
