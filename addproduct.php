@@ -168,7 +168,7 @@
 
 			//if type is dimentions
 			$("#height, #width , #length").on("keyup", function(){
-				$("#typev").val($("#height").val() + "x" + $("#width").val()+ "x" + $("#length").val()+ $("#size").val()+ $("#width").val());
+				$("#typev").val($("#height").val() + "x" + $("#width").val()+ "x" + $("#length").val());
 			});
 
 			//if type is weight
