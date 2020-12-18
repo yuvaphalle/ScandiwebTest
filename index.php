@@ -28,7 +28,16 @@
 						<a href="addproduct.php">
 							<button class="btn btn-outline-success " type="button"><b>ADD</b></button>
 						</a> &nbsp;&nbsp;
-						<button class="btn btn-outline-danger " type="delete" name="save"><b>MASS DELETE</b></button>&nbsp;&nbsp; </div>
+						<script>
+						$(document).ready(function() {
+							$('#myCheckbox').click(function() {
+								$('#delete').prop("disabled", !$("#myCheckbox").prop("checked"));
+							})
+						});
+						</script>
+						<button class="btn btn-outline-danger " type="delete" id="delete" name="save"><b>MASS DELETE</b></button>&nbsp;&nbsp; </div>
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+				
 				</div>
 			</nav>
 		</header>
@@ -37,13 +46,16 @@
 		<br>
 		<br>
 		<br>
+		<br>
 		<main class="container ">
 			<!-- main body cards-->
 			<div class="row row-cols-1 row-cols-md-4 mb-3 text-center ">
 				<?php 
-            
+			
+			
+
             require_once("getproduct.php");
-            getproduct();
+			getproduct();
 
             if(isset($_POST['save'])){
                 global $conn;
@@ -58,8 +70,21 @@
             }
          ?>
 			</div>
+			<!-- Disable Delete Button-->
+			<script>
+			$('#delete').prop("disabled", true);
+			$('input:checkbox').click(function() {
+				if($(this).is(':checked')) {
+					$('#delete').prop("disabled", false);
+				} else {
+					if($('.checks').filter(':checked').length < 1) {
+						$('#delete').attr('disabled', true);
+					}
+				}
+			});
+			</script>
 	</form>
-	<!-- main bidy cards end here-->
+	<!-- main body cards end here-->
 	<br>
 	<footer class="pt-4 my-md-5 pt-md-4 border-top fixed-bottom ">
 		<center><b>Scandiweb Test assignment</b></center>

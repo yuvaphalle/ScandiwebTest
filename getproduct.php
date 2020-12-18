@@ -19,7 +19,7 @@ function getproduct()
         <div class="card mb-4 shadow-sm">
         <div class="card-header">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input " id="checkItem" name="check[]" value="' . $row['id'] . '"> 
+                <input type="checkbox" class="form-check-input checks" id="checkItem"  name="check[]" value="' . $row['id'] . '"> 
             </div>
         </div>
         <div class="card-body">
